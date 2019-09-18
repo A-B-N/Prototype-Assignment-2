@@ -1,0 +1,17 @@
+{
+  "name": "cmpe280-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "express-session": "^1.15.6",
+    "cookie-parser": "^1.4.3",
+    "jade": "*"
+  }
+}
