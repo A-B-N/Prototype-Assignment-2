@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "*",
     "express-session": "^1.15.6",
-    "cookie-parser": "^1.4.3",
-    "jade": "*"
+    "express-validator": "^6.2.0",
+    "jade": "*",
+    "multer": "^1.4.2"
   }
 }
