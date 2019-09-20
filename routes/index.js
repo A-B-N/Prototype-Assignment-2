@@ -6,7 +6,7 @@ var bodyParser=require("body-parser")
 /*
  * GET home page.
  */
-router.get('/', ctrlMain.index);
+router.get('/', ctrlMain.get_register);
 router.get('/register', ctrlMain.get_register);
 router.get('/login', ctrlMain.get_login);
 router.get('/form',ctrlMain.get_custDetails);

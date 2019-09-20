@@ -5,6 +5,7 @@ html
       if(message)
          h4 #{message}
          form(action = "/login" method = "POST")
+            div
              input(name = "username" type = "text" required 
                    placeholder = "username")
              input(name = "password" type = "password" required 
