@@ -99,13 +99,13 @@ module.exports.post_login = function(req, res) {
         console.log("Sucessfully logged in:");
         console.log(req.session.user.username);
 
-        res.render('form');
+        res.redirect('/form');
     }
 };
 
 
 module.exports.get_custDetails = function(req, res) {
-    sendPage('form.html', res);
+    res.render('form');
 };
 module.exports.post_custDetails = function(req, res) {
     var creditScore = getCredit(req);
