@@ -31,6 +31,7 @@ The login page uses user authentication validation, checks the user details to f
 The customer details form has all the necessary details about a customer that should be filled in by the user. Upon successful submission of the form, the entered data will be processed and the result page will be displayed based on the credit score that was entered by the user in the form through the server side logic. If the credit score is above 500, the loanApproved.html page will be rendered to indicate that the loan can be approved for a particular customer. If it falls below that threshold, then loandeclined.html will be rendered, indicating that the customer does not meet the criteria for loan approval. 
 
 Execution Flow:
+
 Unzip the file.
 
 Open cmd or Node.js command prompt and switch to the working directory.
