@@ -24,7 +24,7 @@ function sendPage(fileName, res) {
             }
         });
 }
-
+//functions to get credit score
 function getCredit(req) {
     var creditScore = req.param('creditScore');
 
@@ -99,7 +99,7 @@ module.exports.post_login = function(req, res) {
         console.log("Sucessfully logged in:");
         console.log(req.session.user.username);
 
-        res.redirect('/form');
+        res.redirect('/form');//redirect to form page
     }
 };
 
@@ -108,7 +108,7 @@ module.exports.get_custDetails = function(req, res) {
     res.render('form');
 };
 module.exports.post_custDetails = function(req, res) {
-    var creditScore = getCredit(req);
+    var creditScore = getCredit(req);//get the credit score to check the conditions and render the apt result page
     if (creditScore < 600) {
 
         res.render('loandeclined');

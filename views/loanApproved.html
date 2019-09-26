@@ -9,7 +9,7 @@
             height: 100%;
             margin: 0;
         }
-        
+        canvas{background-color: rgba(204, 204, 204, 0.801); margin-left: 1100px;}
         .bg {
             background-image: url("http://rdcnewscdn.realtor.com/wp-content/uploads/2014/09/pre-approval.gif");
             height: 100%;
@@ -18,15 +18,51 @@
             background-size: cover;
         }
     </style>
+    <script type="text/javascript">
+         function draw(){
+            var canvas = document.getElementById('canvas');
+            if (canvas.getContext){
+                //circle  
+                var ctx = canvas.getContext('2d');
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height / 2;
+                var radius = 90;
+                //draw circle
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                ctx.fillStyle = 'green';
+                ctx.fill();
+                ctx.lineWidth = 5;
+                ctx.strokeStyle = '#fff';
+                ctx.stroke();
+                
+                //draw tick
+                ctx.beginPath();
+                ctx.moveTo(125,150);
+                ctx.lineTo(150,175);
+                ctx.lineTo(200,125);
+                ctx.lineWidth = 20;
+                ctx.strokeStyle = '#fff';
+                ctx.stroke();    
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body onload="draw();">
     <div class="bg"><br>
         <center>
             <h1>
                 <font color='green'>Credit score meets the requirement!! :)</h1>
             </font>
         </center>
+        <br><br><br><br><br><br><br><br>
+        <canvas id="canvas" height="300" width="300">
+            <p>Canvas not supported!</p>
+        </canvas>
+        <!--<canvas id="canvas2" height="200" width="200">
+            <p>Canvas not supported!</p>
+        </canvas>-->
     </div>
 </body>
 

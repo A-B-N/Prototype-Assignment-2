@@ -9,7 +9,7 @@
             height: 100%;
             margin: 0;
         }
-        
+        canvas{background-color: rgba(204, 204, 204, 0.801); margin-left: 1100px;}
         .bg {
             background-image: url("https://i1.wp.com/financebuddha.com/blog/wp-content/uploads/2016/11/07124435/personal-loan-application-declined.jpg?fit=3872%2C2592&ssl=1");
             height: 100%;
@@ -18,9 +18,45 @@
             background-size: cover;
         }
     </style>
+    <script>
+        function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext){
+            //circle  
+            var ctx = canvas.getContext('2d');
+            var centerX = canvas.width / 2;
+            var centerY = canvas.height / 2;
+            var radius = 90;
+            //draw circle
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = '#fff';
+            ctx.stroke();
+            
+            //draw X
+            ctx.beginPath();
+            ctx.moveTo(95,200);
+            ctx.lineTo(200,100);
+            ctx.lineWidth = 20;
+            ctx.strokeStyle = '#fff';
+            ctx.stroke(); 
+            ctx.stroke();
+            
+            
+            ctx.beginPath();
+            ctx.moveTo(100,100);
+            ctx.lineTo(200,200);
+            ctx.lineWidth = 20;
+            ctx.strokeStyle = '#fff';
+            ctx.stroke();
+  }}
+    </script>
 </head>
 
-<body>
+<body onload="draw();">
 
     <div class="bg"><br>
         <center>
@@ -28,6 +64,10 @@
                 <font color='Red'>Credit score is below the threshold!!! :(</h1>
             </font>
         </center>
+        <br><br><br><br><br><br><br><br>
+        <canvas id="canvas" height="300" width="300">
+            <p>Canvas not supported!</p>
+        </canvas>
     </div>
 
 
