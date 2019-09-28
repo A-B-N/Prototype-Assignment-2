@@ -14,8 +14,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true})); 
 app.use(cookieParser());
 
-app.use(session( 
-    {secret:"String for encrypting cookies."} )
+app.use(session({
+    secret:"String for encrypting cookies.",
+    resave: false,
+    saveUninitialized: false,
+    duration: 60*60*100,
+    activeDuration: 5*60*100} )
 );
 app.use('/', index);
 app.use(express.static(path.join(__dirname,'stylesheets')));
