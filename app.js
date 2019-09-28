@@ -8,33 +8,32 @@ var index = require('./routes/index');
 var app = express();
 
 //View engine setup
-app.set('views', path.join(__dirname,'views'));
-app.set('view engine','jade');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended:true})); 
+app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(cookieParser());
 
 app.use(session({
-    secret:"String for encrypting cookies.",
+    secret: "String for encrypting cookies.",
     resave: false,
     saveUninitialized: false,
-    duration: 60*60*100,
-    activeDuration: 5*60*100} )
-);
-app.use('/', index);
-app.use(express.static(path.join(__dirname,'stylesheets')));
+    duration: 60 * 60 * 100,
+    activeDuration: 5 * 60 * 100
+}));
+app.use('/', index);
+app.use(express.static(path.join(__dirname, 'stylesheets')));
 module.exports = app;
 
-   app.get('/', function(req,res){
-    if(req.session.page_views){
+app.get('/', function(req, res) {
+    if (req.session.page_views) {
         req.session.page_views++;
         res.send(req.seesion.page_views);
         console.log('Cookies:', req.cookie);
+    } else {
+        req.session.page_views = 1;
+        // res.send("first time!");
     }
-    else{
-        req.session.page_views=1;
-       // res.send("first time!");
-    }
-   }
-   );
+});
+
 app.listen(3000);
