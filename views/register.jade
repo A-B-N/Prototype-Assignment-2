@@ -2,9 +2,7 @@ html
    head
       title Registration
       link(rel="stylesheet", href="style.css")
-      
         
-          
    body
       if(message)
          h5 #{message}
@@ -19,3 +17,6 @@ html
                    placeholder = "password")
              button(type = "Submit") Register me!
 
+         form(action = "/login" method = "GET")
+             h6 #{"Already have an account?"}
+                  button(type = "Submit") Log In!
