@@ -15,7 +15,8 @@ html
                    placeholder = "firstname")
              input(name = "lastname" type = "text" required 
                    placeholder = "lastname")
-             input(name = "password" type = "password" required 
+             input(name = "password" type = "password"  minlength ="5" required 
+                   data-strength class="form-control input-lg"
                    placeholder = "password")
              button(type = "Submit") Register me!
 

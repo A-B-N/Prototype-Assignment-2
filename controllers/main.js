@@ -41,6 +41,7 @@ module.exports.get_register = function(req, res) {
     res.render('register', { message: "Please register!" });
 };
 module.exports.post_register = function(req, res) {
+    
     if (!req.body.username || !req.body.password) {
         res.status("400");
         res.send("Invalid details!");
@@ -99,11 +100,15 @@ module.exports.post_login = function(req, res) {
         console.log("Sucessfully logged in:");
         console.log(req.session.user.username);
 
-        res.redirect('/form');//redirect to form page
+        res.redirect('/home');//redirect to form page
     }
 };
-
-
+module.exports.get_home=function(req,res){
+    res.render('homepage',{name: req.session.user.username} );
+}
+module.exports.post_home=function(req,res){
+    res.redirect('/form');
+}
 module.exports.get_custDetails = function(req, res) {
     res.render('form');
 };
