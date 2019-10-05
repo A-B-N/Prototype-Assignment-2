@@ -122,3 +122,18 @@ module.exports.post_custDetails = function(req, res) {
         res.render('loanApproved');
     }
 };
+
+module.exports.post_loanApproved=function(req,res){
+    res.redirect('/AJAXpage');
+};
+
+module.exports.get_ajaxpage= function(req,res){
+    res.render('/AJAXpage');
+}
+
+module.exports.post_ajaxpage= function(req,res){
+    res.redirect('/AJAXpage');
+}
+/*module.exports.post_loanApproved=function(req, res){
+    res.redirect('/ajaxtabpage');
+}*/
